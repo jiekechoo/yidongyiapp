@@ -7,9 +7,9 @@
 
 ## 效果展示
 
-<img src="https://raw.githubusercontent.com/sectong/mobileeasyapp/devel/images/welcome1.png">
-<img src="https://raw.githubusercontent.com/sectong/mobileeasyapp/devel/images/welcome2.png">
-<img src="https://raw.githubusercontent.com/sectong/mobileeasyapp/devel/images/welcome3.png">
-<img src="https://raw.githubusercontent.com/sectong/mobileeasyapp/devel/images/reg.png">
-<img src="https://raw.githubusercontent.com/sectong/mobileeasyapp/devel/images/login.png">
-<img src="https://raw.githubusercontent.com/sectong/mobileeasyapp/devel/images/settting.png">
+<img src="https://raw.githubusercontent.com/sectong/yidongyiapp/master/images/welcome1.png">
+<img src="https://raw.githubusercontent.com/sectong/yidongyiapp/master/images/welcome2.png">
+<img src="https://raw.githubusercontent.com/sectong/yidongyiapp/master/images/welcome3.png">
+<img src="https://raw.githubusercontent.com/sectong/yidongyiapp/master/images/reg.png">
+<img src="https://raw.githubusercontent.com/sectong/yidongyiapp/master/images/login.png">
+<img src="https://raw.githubusercontent.com/sectong/yidongyiapp/master/images/settting.png">
