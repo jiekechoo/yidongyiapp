@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+	</head>
+
+	<body>
+		<!--下拉刷新容器-->
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!--数据列表-->
+				<ul class="mui-table-view mui-table-view-chevron">
+
+				</ul>
+
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/app.js"></script>
+		<script>
+			mui.init({
+				pullRefresh: {
+					container: '#pullrefresh',
+					down: {
+						callback: pulldownRefresh
+					},
+					//					up: {
+					//						contentrefresh: '正在加载...',
+					//						callback: pullupRefresh
+					//					}
+				}
+			});
+			/**
+			 * 下拉刷新具体业务实现
+			 */
+			function pulldownRefresh() {
+				setTimeout(function() {
+					var table = document.body.querySelector('.mui-table-view');
+					var cells = document.body.querySelectorAll('.mui-table-view-cell');
+
+					// 获取数据列表
+					mui.ajax('http://localhost:8080' + '/api/v1/news/getNewsList', {
+						data: {},
+						dataType: 'json',
+						timeout: 10000, //超时时间设置为10秒；
+						success: function(data, status, xhr) {
+							console.info("get code: %s", data.code);
+							var cc = data.content.content;
+							// 解析数据并填充cell
+							for(var i = 0, len = data.content.totalElements; i < len; i++) {
+								var dd = new Date(cc[i].datetime);
+								var li = document.createElement('li');
+								li.className = 'mui-table-view-cell mui-media';
+								var str = '<a class="mui-navigate-right">';
+								str += '<img class="mui-media-object mui-pull-left" src="images/cbd.jpg">';
+								str += '<div class="mui-media-body">' + cc[i].title + '<p class = "mui-ellipsis" > ' +
+									dd.toLocaleDateString() + ' ' +
+									dd.toLocaleTimeString().substr(0, 5) + ' </div>';
+								str += '</a>';
+								li.innerHTML = str;
+								//下拉刷新，新纪录插到最前面；
+								table.insertBefore(li, table.firstChild);
+							}
+						}
+					});
+					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+				}, 1500);
+			}
+
+			if(mui.os.plus) {
+				mui.plusReady(function() {
+					setTimeout(function() {
+						mui('#pullrefresh').pullRefresh().pulldownLoading();
+					}, 1000);
+
+				});
+			} else {
+				mui.ready(function() {
+					mui('#pullrefresh').pullRefresh().pulldownLoading();
+				});
+			}
+		</script>
+	</body>
+
+</html>

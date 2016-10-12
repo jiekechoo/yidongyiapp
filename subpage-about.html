@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			
+			.title {
+				margin: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div class="title">
+				<p>用户[<span id='account'></span>]，你好！</p>
+				<p>移动易是一个开源移动应用APP套件。</p>
+				<p>由赛克通开发团队负责主导开发和运营的。</p>
+				<p>本套件包含两个部分：
+					<li>后端服务</li>
+					<p>后端服务由JAVA语言开发，采用成熟的Spring Boot框架开发的稳定、高效、安全的服务框架。</p>
+					<li>前端客户端</li>
+					<p>前端客户端采用HBuilder+MUI+HTML5开发，一次开发可以将Android和iOS双平台完成</p>
+				</p>
+			</div>
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/app.js"></script>
+	<script>
+		(function($, doc) {
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			var account = doc.getElementById('account');
+			window.addEventListener('show', function() {
+				var state = app.getState();
+				account.innerText = state.account;
+				console.log("cookie %s", state.account);
+			}, false);
+		}(mui, document));
+	</script>
+
+</html>

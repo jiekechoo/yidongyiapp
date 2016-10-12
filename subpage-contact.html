@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/mui.indexedlist.css" />
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+				height: 100%;
+			}
+			
+			.title {
+				margin: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+			}
+			
+			.oa-contact-cell.mui-table .mui-table-cell {
+				padding: 11px 0;
+				vertical-align: middle;
+			}
+			
+			.oa-contact-cell {
+				position: relative;
+				margin: -11px 0;
+			}
+			
+			.oa-contact-avatar {
+				width: 75px;
+			}
+			
+			.oa-contact-avatar img {
+				border-radius: 50%;
+			}
+			
+			.oa-contact-content {
+				width: 100%;
+			}
+			
+			.oa-contact-name {
+				margin-right: 20px;
+			}
+			
+			.oa-contact-name,
+			oa-contact-position {
+				float: left;
+			}
+			
+			.img-50 {
+				height: 50px;
+				width: 50px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div id='list' class="mui-indexed-list">
+				<div class="mui-indexed-list-search mui-input-row mui-search">
+					<input type="search" class="mui-input-clear mui-indexed-list-search-input" placeholder="搜索联系人">
+				</div>
+				<div class="mui-indexed-list-bar">
+					<a>A</a>
+					<a>B</a>
+					<a>C</a>
+					<a>D</a>
+					<a>E</a>
+					<a>F</a>
+					<a>G</a>
+					<a>H</a>
+					<a>I</a>
+					<a>J</a>
+					<a>K</a>
+					<a>L</a>
+					<a>M</a>
+					<a>N</a>
+					<a>O</a>
+					<a>P</a>
+					<a>Q</a>
+					<a>R</a>
+					<a>S</a>
+					<a>T</a>
+					<a>U</a>
+					<a>V</a>
+					<a>W</a>
+					<a>X</a>
+					<a>Y</a>
+					<a>Z</a>
+				</div>
+				<div class="mui-indexed-list-alert"></div>
+				<div class="mui-indexed-list-inner">
+					<div class="mui-indexed-list-empty-alert">没有数据</div>
+					<ul class="mui-table-view mui-table-view-striped mui-table-view-condensed">
+						<li data-group="A" class="mui-table-view-divider mui-indexed-list-group">A</li>
+						<li class="mui-table-view-cell">
+							<div class="mui-slider-cell">
+								<div class="oa-contact-cell mui-table">
+									<div class="oa-contact-avatar mui-table-cell">
+										<img src="images/user-photo.png" class="img-50" />
+									</div>
+									<div class="oa-contact-content mui-table-cell">
+										<div class="mui-clearfix">
+											<h4 class="oa-contact-name">阿龙</h4>
+											<span class="oa-contact-position mui-h6">理事长</span>
+										</div>
+										<p class="oa-contact-email mui-h6">
+											yewenjie@sina.com
+										</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="mui-table-view-cell">
+							<div class="mui-slider-cell">
+								<div class="oa-contact-cell mui-table">
+									<div class="oa-contact-avatar mui-table-cell">
+										<img src="images/user-photo.png" class="img-50" />
+									</div>
+									<div class="oa-contact-content mui-table-cell">
+										<div class="mui-clearfix">
+											<h4 class="oa-contact-name">艾AA</h4>
+											<span class="oa-contact-position mui-h6">总经理</span>
+										</div>
+										<p class="oa-contact-email mui-h6">
+											aaa@163.com
+										</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li data-group="F" class="mui-table-view-divider mui-indexed-list-group">F</li>
+						<li class="mui-table-view-cell">
+							<div class="mui-slider-cell">
+								<div class="oa-contact-cell mui-table">
+									<div class="oa-contact-avatar mui-table-cell">
+										<img src="images/user-photo.png" class="img-50" />
+									</div>
+									<div class="oa-contact-content mui-table-cell">
+										<div class="mui-clearfix">
+											<h4 class="oa-contact-name">冯燕</h4>
+											<span class="oa-contact-position mui-h6">员工</span>
+										</div>
+										<p class="oa-contact-email mui-h6">
+											fy@126.com
+										</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="mui-table-view-cell">
+							<div class="mui-slider-cell">
+								<div class="oa-contact-cell mui-table">
+									<div class="oa-contact-avatar mui-table-cell">
+										<img src="images/user-photo.png" class="img-50" />
+									</div>
+									<div class="oa-contact-content mui-table-cell">
+										<div class="mui-clearfix">
+											<h4 class="oa-contact-name">方圆</h4>
+											<span class="oa-contact-position mui-h6">员工</span>
+										</div>
+										<p class="oa-contact-email mui-h6">
+											fy1@126.com
+										</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li data-group="L" class="mui-table-view-divider mui-indexed-list-group">L</li>
+						<li class="mui-table-view-cell">
+							<div class="mui-slider-cell">
+								<div class="oa-contact-cell mui-table">
+									<div class="oa-contact-avatar mui-table-cell">
+										<img src="images/user-photo.png" class="img-50" />
+									</div>
+									<div class="oa-contact-content mui-table-cell">
+										<div class="mui-clearfix">
+											<h4 class="oa-contact-name">罗辑</h4>
+											<span class="oa-contact-position mui-h6">员工</span>
+										</div>
+										<p class="oa-contact-email mui-h6">
+											luoji@126.com
+										</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="mui-table-view-cell">
+							<div class="mui-slider-cell">
+								<div class="oa-contact-cell mui-table">
+									<div class="oa-contact-avatar mui-table-cell">
+										<img src="images/user-photo.png" class="img-50" />
+									</div>
+									<div class="oa-contact-content mui-table-cell">
+										<div class="mui-clearfix">
+											<h4 class="oa-contact-name">刘云</h4>
+											<span class="oa-contact-position mui-h6">主任</span>
+										</div>
+										<p class="oa-contact-email mui-h6">
+											ly@126.com
+										</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="mui-table-view-cell">
+							<div class="mui-slider-cell">
+								<div class="oa-contact-cell mui-table">
+									<div class="oa-contact-avatar mui-table-cell">
+										<img src="images/user-photo.png" class="img-50" />
+									</div>
+									<div class="oa-contact-content mui-table-cell">
+										<div class="mui-clearfix">
+											<h4 class="oa-contact-name">罗宾浩</h4>
+											<span class="oa-contact-position mui-h6">员工</span>
+										</div>
+										<p class="oa-contact-email mui-h6">
+											lbh@126.com
+										</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li data-group="Q" class="mui-table-view-divider mui-indexed-list-group">Q</li>
+						<li class="mui-table-view-cell">
+							<div class="mui-slider-cell">
+								<div class="oa-contact-cell mui-table">
+									<div class="oa-contact-avatar mui-table-cell">
+										<img src="images/user-photo.png" class="img-50" />
+									</div>
+									<div class="oa-contact-content mui-table-cell">
+										<div class="mui-clearfix">
+											<h4 class="oa-contact-name">秦健</h4>
+											<span class="oa-contact-position mui-h6">部门经理</span>
+										</div>
+										<p class="oa-contact-email mui-h6">
+											qj@gmail.com
+										</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="mui-table-view-cell">
+							<div class="mui-slider-cell">
+								<div class="oa-contact-cell mui-table">
+									<div class="oa-contact-avatar mui-table-cell">
+										<img src="images/user-photo.png" class="img-50" />
+									</div>
+									<div class="oa-contact-content mui-table-cell">
+										<div class="mui-clearfix">
+											<h4 class="oa-contact-name">秦萍</h4>
+											<span class="oa-contact-position mui-h6">办公室经理</span>
+										</div>
+										<p class="oa-contact-email mui-h6">
+											qp@gmail.com
+										</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li data-group="S" class="mui-table-view-divider mui-indexed-list-group">S</li>
+						<li class="mui-table-view-cell">
+							<div class="mui-slider-cell">
+								<div class="oa-contact-cell mui-table">
+									<div class="oa-contact-avatar mui-table-cell">
+										<img src="images/user-photo.png" class="img-50" />
+									</div>
+									<div class="oa-contact-content mui-table-cell">
+										<div class="mui-clearfix">
+											<h4 class="oa-contact-name">史强</h4>
+											<span class="oa-contact-position mui-h6">员工</span>
+										</div>
+										<p class="oa-contact-email mui-h6">
+											shiqiang@gmail.com
+										</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li data-group="Y" class="mui-table-view-divider mui-indexed-list-group">Y</li>
+						<li class="mui-table-view-cell">
+							<div class="mui-slider-cell">
+								<div class="oa-contact-cell mui-table">
+									<div class="oa-contact-avatar mui-table-cell">
+										<img src="images/user-photo.png" class="img-50" />
+									</div>
+									<div class="oa-contact-content mui-table-cell">
+										<div class="mui-clearfix">
+											<h4 class="oa-contact-name">云天明</h4>
+											<span class="oa-contact-position mui-h6">员工</span>
+										</div>
+										<p class="oa-contact-email mui-h6">
+											ytm@163.com
+										</p>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li data-group="Z" class="mui-table-view-divider mui-indexed-list-group">Z</li>
+						<li class="mui-table-view-cell">
+							<div class="mui-slider-cell">
+								<div class="oa-contact-cell mui-table">
+									<div class="oa-contact-avatar mui-table-cell">
+										<img src="images/user-photo.png" class="img-50" />
+									</div>
+									<div class="oa-contact-content mui-table-cell">
+										<div class="mui-clearfix">
+											<h4 class="oa-contact-name">赵四</h4>
+											<span class="oa-contact-position mui-h6">员工</span>
+										</div>
+										<p class="oa-contact-email mui-h6">
+											zhaosi@gmail.com
+										</p>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/mui.indexedlist.js"></script>
+	<script src="js/strophe.min.js"></script>
+	<script>
+		mui.init({
+			swipeBack: true //启用右滑关闭功能
+		});
+		mui.ready(function() {
+			var list = document.getElementById('list');
+			//calc hieght
+			list.style.height = document.body.offsetHeight + 'px';
+			//create
+			window.indexedList = new mui.IndexedList(list);
+		});
+	</script>
+
+</html>
