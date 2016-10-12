@@ -25,6 +25,8 @@
 		<script src="js/mui.min.js"></script>
 		<script src="js/app.js"></script>
 		<script>
+			var maxid = 0;
+			var minid = 0;
 			mui.init({
 				pullRefresh: {
 					container: '#pullrefresh',
@@ -46,27 +48,33 @@
 					var cells = document.body.querySelectorAll('.mui-table-view-cell');
 
 					// 获取数据列表
-					mui.ajax('http://localhost:8080' + '/api/v1/news/getNewsList', {
+					mui.ajax('http://localhost:8080' + '/api/v1/news/getNewsList?startid=' + maxid + '&sort=id,DESC', {
 						data: {},
 						dataType: 'json',
 						timeout: 10000, //超时时间设置为10秒；
 						success: function(data, status, xhr) {
-							console.info("get code: %s", data.code);
+							console.info("get code: %s, maxid: %s, minid: %s", data.code, maxid, minid);
 							var cc = data.content.content;
 							// 解析数据并填充cell
-							for(var i = 0, len = data.content.totalElements; i < len; i++) {
-								var dd = new Date(cc[i].datetime);
-								var li = document.createElement('li');
-								li.className = 'mui-table-view-cell mui-media';
-								var str = '<a class="mui-navigate-right">';
-								str += '<img class="mui-media-object mui-pull-left" src="images/cbd.jpg">';
-								str += '<div class="mui-media-body">' + cc[i].title + '<p class = "mui-ellipsis" > ' +
-									dd.toLocaleDateString() + ' ' +
-									dd.toLocaleTimeString().substr(0, 5) + ' </div>';
-								str += '</a>';
-								li.innerHTML = str;
-								//下拉刷新，新纪录插到最前面；
-								table.insertBefore(li, table.firstChild);
+							if(data.content.totalElements > 0) {
+								for(var i = data.content.totalElements - 1; i >= 0; i--) {
+									var dd = new Date(cc[i].datetime);
+									var li = document.createElement('li');
+									li.className = 'mui-table-view-cell mui-media';
+									var str = '<a class="mui-navigate-right">';
+									str += '<img class="mui-media-object mui-pull-left" src="images/cbd.jpg">';
+									str += '<div class="mui-media-body">' + cc[i].title + '<p class = "mui-ellipsis" > ' +
+										dd.toLocaleDateString() + ' ' +
+										dd.toLocaleTimeString() + ' </div>';
+									str += '</a>';
+									li.innerHTML = str;
+									//下拉刷新，新纪录插到最前面；
+									table.insertBefore(li, table.firstChild);
+								}
+								maxid = cc[0].id;
+								minid = cc[data.content.totalElements - 1].id;
+								plus.nativeUI.toast('更新条目：' + data.content.totalElements);
+								console.info("after view ==> maxid: %s, minid: %s", maxid, minid);
 							}
 						}
 					});

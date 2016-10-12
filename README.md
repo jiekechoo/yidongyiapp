@@ -4,12 +4,3 @@
 ## 核心功能
 1. 启动App后校验登录状态，若已登录，直接跳转应用首页；否则，显示登录页面；
 2. 支持服务端API注册；
-
-## 效果展示
-
-<img src="https://raw.githubusercontent.com/sectong/yidongyiapp/master/images/welcome1.png">
-<img src="https://raw.githubusercontent.com/sectong/yidongyiapp/master/images/welcome2.png">
-<img src="https://raw.githubusercontent.com/sectong/yidongyiapp/master/images/welcome3.png">
-<img src="https://raw.githubusercontent.com/sectong/yidongyiapp/master/images/reg.png">
-<img src="https://raw.githubusercontent.com/sectong/yidongyiapp/master/images/login.png">
-<img src="https://raw.githubusercontent.com/sectong/yidongyiapp/master/images/settting.png">
