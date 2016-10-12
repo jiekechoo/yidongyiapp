@@ -26,7 +26,7 @@
 	<body>
 		<div class="mui-content">
 			<div class="title">
-				<p>用户[<span id='account'></span>]，你好！</p>
+				<!--<p>用户[<span id='account'></span>]，你好！</p>-->
 				<p>移动易是一个开源移动应用APP套件。</p>
 				<p>由赛克通开发团队负责主导开发和运营的。</p>
 				<p>本套件包含两个部分：
@@ -50,7 +50,7 @@
 				var state = app.getState();
 				account.innerText = state.account;
 				console.log("cookie %s", state.account);
-			}, false);
+			}, true);
 		}(mui, document));
 	</script>
 
