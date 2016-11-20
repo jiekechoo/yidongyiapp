@@ -79,6 +79,7 @@
 		callback = callback || $.noop;
 		regInfo = regInfo || {};
 		regInfo.account = regInfo.account || '';
+		regInfo.code = regInfo.code || '';
 		regInfo.password = regInfo.password || '';
 		if(!checkMobile(regInfo.account)) {
 			return callback('请确认手机号码是否正确');
@@ -89,6 +90,7 @@
 		mui.ajax(serverip + '/api/v1/create', {
 			data: JSON.stringify({
 				'username': regInfo.account,
+				'vcode': regInfo.code,
 				'password': regInfo.password
 			}),
 			dataType: 'json', //服务器返回json格式数据
@@ -113,6 +115,20 @@
 		});
 
 	};
+
+	owner.requestSMS = function(mobile, callback) {
+		mui.ajax(serverip + '/api/v1/requestSMS?mobile=' + mobile, {
+			data: {},
+			type: 'post', //HTTP请求类型
+			dataType: 'json',
+			timeout: 10000, //超时时间设置为10秒；
+			success: function(data, status, xhr) {
+				console.info("get code: %s", data.code);
+				return data;
+			}
+		});
+
+	}
 
 	/**
 	 * 获取新闻列表

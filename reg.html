@@ -52,11 +52,11 @@
 					<label>手机</label>
 					<input id='account' type="text" class="mui-input-clear mui-input" placeholder="请输入账号">
 				</div>
-				<!--<div class="mui-input-row">
+				<div class="mui-input-row">
 					<label>验证码</label>
 					<input id='code' type="text" class="mui-input-clear mui-input" placeholder="请输入验证码">
-					<button style="position: absolute;top:3px;right:10px;width:100px;">发送验证码</button>
-				</div>-->
+					<button id='sms' style="position: absolute;top:3px;right:10px;width:100px;">发送验证码</button>
+				</div>
 				<div class="mui-input-row">
 					<label>密码</label>
 					<input id='password' type="password" class="mui-input-clear mui-input" placeholder="请输入密码">
@@ -77,11 +77,14 @@
 				$.plusReady(function() {
 					var settings = app.getSettings();
 					var regButton = doc.getElementById('reg');
+					var requestSMSButton = doc.getElementById('sms');
+					var smsCodeBox = doc.getElementById('code');
 					var accountBox = doc.getElementById('account');
 					var passwordBox = doc.getElementById('password');
 					regButton.addEventListener('tap', function(event) {
 						var regInfo = {
 							account: accountBox.value,
+							code: smsCodeBox.value,
 							password: passwordBox.value,
 						};
 						app.reg(regInfo, function(err) {
@@ -98,6 +101,23 @@
 							});
 						});
 					});
+					requestSMSButton.addEventListener('tap', function(event) {
+						var account = accountBox.value;
+						app.requestSMS(account, function(err) {
+							if (err) {
+								plus.nativeUI.toast(err);
+								return;
+							}
+							plus.nativeUI.toast('短信验证码请求成功');
+							$.openWindow({
+								id: 'main',
+								show: {
+									aniShow: 'pop-in'
+								}
+							});
+						});
+					});
+					
 				});
 			}(mui, document));
 		</script>

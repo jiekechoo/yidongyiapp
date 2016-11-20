@@ -134,7 +134,36 @@
 					defaultTab.classList.add('mui-active');
 				}
 			});
-		</script>
+			
+			// 监听plusready事件  
+document.addEventListener("plusready", function() {
+	message = document.getElementById("message");
+	// 监听点击消息事件
+	plus.push.addEventListener("click", function(msg) {
+		// 判断是从本地创建还是离线推送的消息
+		switch(msg.payload) {
+			case "LocalMSG":
+				outSet("点击本地创建消息启动：");
+				break;
+			default:
+				outSet("点击离线推送消息启动：");
+				break;
+		}
+		// 提示点击的内容
+		plus.nativeUI.alert(msg.content);
+		// 处理其它数据
+		logoutPushMsg(msg);
+	}, false);
+	// 监听在线消息事件
+	plus.push.addEventListener("receive", function(msg) {
+		if(msg.aps) { // Apple APNS message
+			outSet("接收到在线APNS消息：");
+		} else {
+			outSet("接收到在线透传消息：");
+		}
+		logoutPushMsg(msg);
+	}, false);
+}, false);</script>
 	</body>
 
 </html>
